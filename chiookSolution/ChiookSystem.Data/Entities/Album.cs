@@ -24,23 +24,8 @@ namespace ChiookSystem.Data.Entities
         //Navigation properties
         public virtual ICollection<Track> Tracks { get; set; }
         public virtual Artist Artist { get; set; }
-        {
-        [Table("Tracks")]
-        public class Track
-        { 
-            [Key]
-            public int TrackId { get; set; }
-            public int Name { get; set; }
-            public int ? AlbumId { get; set; }
-            public int MediaTypeId { get; set; }
-            public int?GenreId { get; set; }
-            public int Composer{ get; set; }
-            public int  Milliseconds{ get; set; }
-            public int?Bytes { get; set; }
-            public int UnitPrice{ get; set; }
-
-            //Navation properties
-            public virtual Album Album { get; set; }
+       
+       
 
 
     }

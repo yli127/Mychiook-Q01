@@ -49,11 +49,13 @@
                     <a class="navbar-brand" runat="server" href="~/">Application name</a>
                 </div>
                 <div class="navbar-collapse collapse">
+                    <%-- 
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/">Home</a></li>
                         <li><a runat="server" href="~/About">About</a></li>
                         <li><a runat="server" href="~/Contact">Contact</a></li>
                     </ul>
+                    --%>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
                             <ul class="nav navbar-nav navbar-right">
@@ -70,6 +72,26 @@
                             </ul>
                         </LoggedInTemplate>
                     </asp:LoginView>
+                    <%-- This is the site menu --%>
+                    <asp:Menu ID="NavMenu" runat="server">
+                        BackColor="222222"
+                        BorderColor="#ff0000"
+                        StaticMenuItemStyle-ForeColor="#9d9d9d"
+                        StaticMenuItemStyle-VerticalPadding="15px"
+                        StaticMenuItemStyle-HorizontalPadding="10px"
+                        RenderingMode="List"
+                        Orientation="Horizontal"
+                        DynamicMenuItemStyle-ForeColor="#9d9d9d"
+                        DynamicMenuItemStyle-BackColor="#222222"
+                        <Items>
+                            <asp:MenuItem Text="Home" NavigateUrl="~/"/>
+                            <asp:MenuItem Text="Sample Queries" Value="linq">
+                                <asp:MenuItem Text="First Sample" NavigateUrl="~/SampleQueries/FirstSample.aspx"/>
+                                <asp:MenuItem Text="Reo Customers" NavigateUrl="~/SampleQueries/Representative.aspx"/>
+                                </asp:MenuItem>
+                            <asp:MenuItem Text="About" NavigateUrl="~/About.aspx"/>
+                            <asp:MenuItem Text="Contact" NavigateUrl="~/Contact.aspx"/>
+                            </Items>
                 </div>
             </div>
         </div>
